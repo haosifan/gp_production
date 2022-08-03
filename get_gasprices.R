@@ -3,8 +3,6 @@ library(readr)
 library(dplyr)
 library(janitor)
 
-test <- 1
-
 gp <- jsonlite::fromJSON("https://creativecommons.tankerkoenig.de/json/list.php?lat=51.26200631775155&lng=7.12993796630200558&rad=4&sort=dist&type=all&apikey=xxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 gp_df <- gp %>% as.data.frame() %>% janitor::clean_names() %>% 
   mutate(datetime = Sys.time()) %>% 
